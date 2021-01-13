@@ -1,0 +1,59 @@
+$finalHeight: 550px;
+$finalWidth: 3 * $finalHeight;
+$scrollBarHeight: 1px;
+
+::-webkit-scrollbar {
+  width: $scrollBarHeight;
+  height: $scrollBarHeight;
+}
+
+::-webkit-scrollbar-button {
+  width: $scrollBarHeight;
+  height: $scrollBarHeight;
+}
+
+body {
+  background: #111;
+  height: 100%; overflow: hidden;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.horizontal-scroll-wrapper {
+//   position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: calc(#{$finalHeight});
+  max-height: $finalWidth;
+  margin: 10rem;
+  padding-top: $scrollBarHeight;
+//   background: #abc;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: rotate(-90deg) translateY(-$finalHeight);
+  transform-origin: right top;
+  & > div {
+    display: block;
+    padding: 5px;
+    // background: #cab;
+    transform: rotate(90deg);
+    transform-origin: right top;
+  }
+}
+
+.squares {
+    font-size: 1.5rem;
+  padding: $finalHeight 0 0 0;
+  & > div {
+    width: $finalHeight;
+    height: $finalHeight;
+    margin: 10px 0;
+  }
+}
+
+.makeStyles-root-1 {
+     max-width: auto !important; 
+}

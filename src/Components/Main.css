@@ -1,0 +1,32 @@
+*{
+ font-size: 10px;
+}
+.makeStyles-root-1 {
+    max-width: auto !important; 
+}
+
+.header{
+    margin:0.9rem;
+    background-color:rgb(255, 201, 100);
+    text-align: left;
+    padding-left: 20px;
+    padding: 1.2rem;
+    display:flex;
+    font-size: 3rem;
+    justify-content: space-between;
+    font-family: Garamond, serif;
+    border-radius:0.3rem;
+}
+.avatar{
+    font-family: 'Acme';
+    font-size: 2.5rem;
+    padding-right:1rem;
+    display: flex;
+    align-items: center;
+}
+.title{
+    padding-left: 2rem;
+    font-weight: bolder;
+    font-family: 'Sofia';font-size: 3.9rem;
+    letter-spacing: 0.1 rem;
+}

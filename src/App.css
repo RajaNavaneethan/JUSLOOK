@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+.makeStyles-root-1 {
+  max-width: auto !important; 
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
