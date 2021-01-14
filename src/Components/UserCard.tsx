@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import data from './Data.json';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -15,7 +16,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-
+import './Main.scss'
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     media: {
@@ -38,40 +39,36 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function RecipeReviewCard() {
+const RecipeReviewCard = (props:any) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-
+  
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
+    <div className="users">
     <Card>
       <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={props.data.name}
+        subheader={props.data.username}
       />
-      <CardMedia
+      {/* <CardMedia
         className={classes.media}
         image="/static/images/cards/paella.jpg"
         title="Paella dish"
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+      /> */}
+      <CardContent style={{cursor:"pointer"}} onClick={()=>{props.modalopen(props.data);console.log(`some cliclk`)}}>
+      <Typography variant="h5" gutterBottom>
+          website: {props.data.website}
         </Typography>
+        <Typography variant="h5" gutterBottom>
+          email: {props.data.email}     
+        </Typography>
+        <Typography variant="h5" gutterBottom>
+          phone: {props.data.phone}
+        </Typography><br/>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
@@ -92,5 +89,7 @@ export default function RecipeReviewCard() {
         </IconButton>
       </CardActions>
     </Card>
+    </div>
   );
 }
+export default RecipeReviewCard;

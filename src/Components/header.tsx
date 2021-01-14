@@ -18,7 +18,7 @@ export default class Header extends React.Component{
             <div className="mainSelector">
                 <div className="header">
                     <div className="title">JUSLOOK</div>
-                    <div className="avatar">Raja Navaneethan{'\u00A0'}{'\u00A0'}
+                    <div className="avatar">Welcome User{'\u00A0'}{'\u00A0'}
                     <HomeIcon fontSize='large'></HomeIcon>{'\u00A0'}
                     <AccountBoxIcon fontSize='large'/></div>
                 </div>
